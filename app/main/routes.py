@@ -1,15 +1,26 @@
-from flask import flash, json, make_response, redirect, render_template, request
+from flask import flash, json, make_response, redirect, render_template, request, url_for
 from flask_wtf.csrf import CSRFError
 from werkzeug.exceptions import HTTPException
 
 from app.main import bp
-from app.main.forms import CookiesForm
+from app.main.forms import CookiesForm, ExampleForm
 
 
 @bp.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
 
+
+@bp.route("/example-form", methods=["GET", "POST"])
+def example():
+    form = ExampleForm()
+
+    if form.validate_on_submit():
+        print(f'desired url - : {form.desired_url.data}')
+        print(f'start date - : {form.start_date.data}')
+        return redirect(url_for("main.index"))
+
+    return render_template("example_form.html", form=form)
 
 @bp.route("/accessibility", methods=["GET"])
 def accessibility():
