@@ -34,7 +34,7 @@ flask-assets==2.0
     # via -r requirements.in
 flask-compress==1.13
     # via -r requirements.in
-flask-limiter==3.1.0
+flask-limiter==3.3.1
     # via -r requirements.in
 flask-talisman==1.0.0
     # via -r requirements.in
@@ -50,8 +50,6 @@ gunicorn==20.1.0
     # via -r requirements.in
 idna==3.4
     # via email-validator
-importlib-metadata==6.0.0
-    # via flask
 itsdangerous==2.1.2
     # via
     #   flask
@@ -96,8 +94,6 @@ wtforms==3.0.1
     # via
     #   flask-wtf
     #   govuk-frontend-wtf
-zipp==3.11.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
